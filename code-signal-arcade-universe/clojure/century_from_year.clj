@@ -1,3 +1,5 @@
+;; Original Solution
+
 (defn f2d
   "Int->Int, Given a number 2+ digits long, return first two digits"
   [n]
@@ -25,4 +27,13 @@
         (+ 1 (d1 y)))
       (if (= (l2d y) 0)
         (f2d y)
-        (+ 1 (f2d y))))));; => #'user/century-from-year
+        (+ 1 (f2d y))))))
+;; => #'user/century-from-year
+
+;; Elegant Solution
+
+(defn century-from-year
+  "Int->Int, Given a year, return the century it is in"
+  [y]
+  (+ (quot (- y 1) 100) 1))
+;; => #'user/century-from-year
