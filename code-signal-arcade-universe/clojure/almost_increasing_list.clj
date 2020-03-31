@@ -1,11 +1,7 @@
 (defn almost_increasing_list
   "List -> Boolean, given a list, return true if removing one element results
-    in a sorted list"
-  [[x y z & rst :as v]]
-  (cond
-    (nil? z) (apply <= (conj rst y x))
-    (or (<= z y)
-        (<= z x)) (or (apply < (conj rst z x))
-                      (apply < (conj rst y x))
-                      (apply < (conj rst z y)))
-    :default (recur (rest v))))
+  in a sorted list"
+  [l]
+  (loop [i (dec (count l))]
+    (and (>= i 0) (or (apply < (keep-indexed #(if (not= i %1) %2) l))
+                      (recur (dec i))))))
