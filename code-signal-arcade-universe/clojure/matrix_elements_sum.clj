@@ -1,3 +1,4 @@
+;; Original solution
 (defn matrix_elements_sum [m]
   "List -> Int, given a rectangular matrix on numbers, return sum of all numbers that do not have a 0 above them in their column"
   (reduce + (for [x (apply map vector m)]
@@ -6,3 +7,8 @@
                 (if (or (= i (count x)) (= 0 (x i)))
                   sum
                   (recur (inc i) (+ sum (x i))))))))
+
+;; More elegant solution
+(defn matrix_sum [m]
+  "List -> Int, given a rectangular matrix on numbers, return sum of all numbers that do not have a 0 above them in their column"
+  (reduce #(+ %1 (apply + (take-while (complement zero?) %2))) 0 (apply map vector m)))
