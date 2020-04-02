@@ -6,5 +6,5 @@
         mp (merge-with #(min %1 %2) f1 f2)
         ks (distinct (filter (into #{} s1) s2))
         vs (vals (select-keys mp ks))
-        rs (reduce + vs)]
-    rs))
+        cc (reduce + vs)]
+    cc))
