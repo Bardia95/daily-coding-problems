@@ -4,7 +4,7 @@ def are_equally_strong(al, ar, bl, br):
     return sorted(a) == sorted(b)
 
 
-def are_equally_strong(al, ar, bl, br):
+def are_equally_strong_2(al, ar, bl, br):
     return {al, ar} == {bl, br}
 
 
