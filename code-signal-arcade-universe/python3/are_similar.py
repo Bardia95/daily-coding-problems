@@ -1,13 +1,11 @@
-(defn are-similar [a b]
-  (let [calc (->> (map vector a b)
-                  (filter (partial apply not=))
-                  (map sort))]
-    (or (zero? (count calc))
-        (and (<= (count calc) 2)
-             (apply = calc)))))
+from collections import Counter as C
+
+def are_similar(a, b):
+    return C(a) == C(b) and sum(x != y for x, y in zip(a, b)) < 3
 
 
-(comment "Two arrays are called similar if one can be obtained from another by swapping at most one pair of elements in one of the arrays.
+"""
+Two arrays are called similar if one can be obtained from another by swapping at most one pair of elements in one of the arrays.
 
 Given two arrays a and b, check whether they are similar.
 
@@ -30,7 +28,7 @@ Any swap of any two elements either in a or in b won't make a and b equal.
 
 Input/Output
 
-[execution time limit] 16 seconds (clj)
+[execution time limit] 4 seconds (py3)
 
 [input] array.integer a
 
@@ -51,4 +49,4 @@ b.length = a.length,
 [output] boolean
 
 true if a and b are similar, false otherwise.
-")
+"""
