@@ -3,6 +3,10 @@
         b (sort [bl br])]
     (= a b)))
 
+(defn are-equally-strong-2 [al ar bl br]
+  (= (set [al ar]) (set [bl br])))
+
+
 (comment "
 Call two arms equally strong if the heaviest weights they each are able to lift are equal.
 
