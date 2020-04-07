@@ -4,6 +4,10 @@ def are_equally_strong(al, ar, bl, br):
     return sorted(a) == sorted(b)
 
 
+def are_equally_strong(al, ar, bl, br):
+    return {al, ar} == {bl, br}
+
+
 """
 Call two arms equally strong if the heaviest weights they each are able to lift are equal.
 
