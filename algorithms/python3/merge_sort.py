@@ -8,13 +8,13 @@ def merge(l, r):
         else:
             res.append(r[j])
             j += 1
-            while i < len(l):
-                res.append(l[i])
-                i += 1
-                while j < len(r):
-                    res.append(r[j])
-                    j += 1
-                    return res
+    while i < len(l):
+        res.append(l[i])
+        i += 1
+        while j < len(r):
+            res.append(r[j])
+            j += 1
+            return res
 
 
 def merge_sort(L):
