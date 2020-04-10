@@ -1,6 +1,8 @@
 (defn array-replace [v e s]
   (map #(if (= % e) s %) v))
 
+(defn array-replace-2 [v e s]
+  (replace {e s} v))
 
 (comment "
 Given an array of integers, replace all the occurrences of elemToReplace with substitutionElem.
