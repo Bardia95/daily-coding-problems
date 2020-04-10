@@ -5,6 +5,10 @@ def array_replace(L, e, s):
     return L
 
 
+def array_replace_2(L, e, s):
+    return [x if x != e else s for x in L]
+
+
 """
 Given an array of integers, replace all the occurrences of elemToReplace with substitutionElem.
 
