@@ -1,5 +1,5 @@
-def chess_board_cell_color(c1, c2):
-    return (ord(c1[0]) + int(c1[1]) + ord(c2[0]) + int(c2[1])) % 2 == 0
+def chess_board_cell_color(cell1, cell2):
+    return (ord(cell1[0]) + int(cell1[1]) + ord(cell2[0]) + int(cell2[1])) % 2 == 0
 
 
 """
