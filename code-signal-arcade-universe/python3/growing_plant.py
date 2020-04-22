@@ -10,6 +10,12 @@ def growing_plant(up, down, desired):
             i += 1
 
 
+def growing_plant_2(up, down, desired):
+    if desired <= up:
+        return 1
+    return math.ceil((desired - up) / (up - down) + 1)
+
+
 """
 Caring for a plant can be hard work, but since you tend to it regularly, you have a plant that grows consistently. Each day, its height increases by a fixed amount represented by the integer upSpeed. But due to lack of sunlight, the plant decreases in height every night, by an amount represented by downSpeed.
 
