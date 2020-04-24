@@ -12,16 +12,22 @@
           0)))))
 
 
-(defn int-bool [bool]
-  (if bool
+(defn ib [b]
+  (if b
     1
     0))
 
+(defn vow [coll]
+  (let [[w m v] coll]
+    (* (ib (<= w m)) v)))
 
-(defn knapsack-light [v1 w1 v2 w2 max-w]
-  (max (* (int-bool (<= (+ w1 w2) max-w)) (+ w1 w2))
-       (* (int-bool (<= w2 max-w)) v2)
-       (* (int-bool (<= w1 max-w)) v1)))
+
+(defn knapsack-light [v1 w1 v2 w2 mw]
+  (let [tw (+ w1 w2)
+        tv (+ v1 v2)]
+    (apply max (map vow [[tw mw tv]
+                         [w1 mw v1]
+                         [w2 mw v2]]))))
 
 
 (comment "You found two items in a treasure chest! The first item weighs weight1 and is worth value1, and the second item weighs weight2 and is worth value2. What is the total maximum value of the items you can take with you, assuming that your max weight capacity is maxW and you can't come back for the items later?
