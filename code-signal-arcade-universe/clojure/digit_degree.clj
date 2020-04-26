@@ -4,7 +4,7 @@
 (defn digit-degree [n]
   (loop [n n
          i 0]
-    (if (= 1 (count (str n)))
+    (if (< n 10)
       i
       (recur (sum-digits n) (inc i)))))
 
