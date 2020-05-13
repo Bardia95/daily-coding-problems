@@ -1,6 +1,6 @@
 (defn valid-time [time]
-  (let [[hr mn]  (map #(Integer. %) (clojure.string/split time #":"))]
-    (if (and (< hr 24) (< mn 60))
+  (let [[h m]  (map #(Integer. %) (clojure.string/split time #":"))]
+    (if (and (< h 24) (< m 60))
       true
       false)))
 
